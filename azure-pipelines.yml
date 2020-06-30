@@ -35,5 +35,5 @@ steps:
     pytest
   displayName: 'pytest'
 
-- script: python src/example.py
+- script: python example.py
   
