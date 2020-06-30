@@ -64,7 +64,17 @@ steps:
 - script: pip install -r requirements.txt
   displayName: 'Install requirements'
 
-  
+- script: |
+    python -m pip install flake8
+    flake8 .
+  displayName: 'Run lint tests'
+
+- script: |
+    pip install pytest
+    pip install pytest-cov
+    pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml --cov-report=html
+  displayName: 'Test with pytest'
+
 
 
   
